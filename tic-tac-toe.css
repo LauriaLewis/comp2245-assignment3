@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Titan+One&display=swap');
+
+:root{
+  --black: #1a202c;
+  --lightGrey: #edf2f7;
+  --grey: #cbd5e0;
+  --coral: #E57996;
+  --lighterBlue: #32ABE1;
+  --lightBlue: #3182ce;
+  --green: #42B883;
+  --defaultFontFamily: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+body {
+  font-family: var(--defaultFontFamily);
+  background: var(--lightGrey) url('tic-tac-toe-bg.png') repeat top left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+}
+
+h1 {
+  color: var(--lighterBlue);
+  font-family: 'Titan One', var(--defaultFontFamily);
+  font-size: 48px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 span {
+  color: var(--coral);
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-gap: 20px;
+}
+
+#status {
+  font-size: 24px;
+  margin: 20px 0;
+  text-align: center;
+  background: white;
+  max-width: 490px;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-top: 4px solid var(--lighterBlue);
+  border-radius: 5px;
+}
+
+#status.you-won {
+  color: var(--green);
+  border-top: 4px solid var(--green);
+  font-weight: bold;
+}
+
+#status.you-won::before {
+  content: '🎉';
+  display: inline-block;
+  margin-right: 8px;
+}
+
+#status.you-won::after {
+  content: '🎉';
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.square {
+  background: white;
+  border: 1px solid var(--grey);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  font-size: 96px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square.X {
+  color: var(--lighterBlue);
+}
+
+.square.O {
+  color: var(--coral);
+}
+
+.hover {
+  background: var(--coral);
+  border-color: var(--lighterBlue);
+  cursor: pointer;
+}
+
+.hover.O {
+  color: white;
+}
+
+.btn {
+  color: white;
+  background-color: var(--lighterBlue);
+  border: 1px solid var(--lighterBlue);
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  padding: .375rem .75rem;
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+
+.btn:hover {
+  background-color: var(--lightBlue);
+  border: 1px solid var(--lightBlue);
+  cursor: pointer;
+}
